@@ -1,0 +1,177 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.info {
+    text-align: center;
+    color: #555;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    display: inline-block;
+    width: 30%;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 65%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-row input, .form-row textarea {
+    width: 65%;
+}
+
+/* Button Styling */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-submit {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-cancel {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-reset {
+    background-color: #009688;
+    color: white;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+/* Success and Error Message Styling */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+    max-width: 100%;
+}
+
+/* Success message */
+.alert.success {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border: 1px solid #218838; /* Darker green border for contrast */
+}
+
+.alert.success::before {
+    content: "✓";
+    margin-right: 10px;
+    color: white;
+    font-size: 20px;
+}
+/* More specific selector */
+.container .alert.success {
+    background-color: #28a745;
+    color: white;
+    border: 1px solid #218838;
+}
+
+.container .alert.success::before {
+    content: "✓";
+    margin-right: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+
+/* Error message */
+.alert.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert.error::before {
+    content: "⚠️";
+    margin-right: 10px;
+    color: #dc3545;
+    font-size: 20px;
+}
+
+/* Optional: Fade out animation */
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.alert.fade-out {
+    animation: fadeOut 3s ease forwards;
+}
+
+/* Styling for alert text */
+.alert p {
+    margin: 0;
+    font-size: 16px;
+    color: inherit;
+}
+

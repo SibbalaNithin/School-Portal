@@ -1,0 +1,397 @@
+/*!*!* General Reset and Global Styles *!*!*/
+/*!** {*!*/
+/*!*    margin: 0;*!*/
+/*!*    padding: 0;*!*/
+/*!*    box-sizing: border-box;*!*/
+/*!*}*!*/
+
+/*!*body {*!*/
+/*!*    font-family: 'Arial', sans-serif;*!*/
+/*!*    background-color: #f4f7fc;*!*/
+/*!*    color: #333;*!*/
+/*!*    display: flex;*!*/
+/*!*    justify-content: center;*!*/
+/*!*    align-items: center;*!*/
+/*!*    height: 100vh;*!*/
+/*!*    margin: 0;*!*/
+/*!*}*!*/
+
+/*!*h2 {*!*/
+/*!*    font-size: 26px;*!*/
+/*!*    text-align: center;*!*/
+/*!*    margin-bottom: 20px;*!*/
+/*!*    color: #333;*!*/
+/*!*}*!*/
+
+/*!*!* Login Container Styles *!*!*/
+/*!*.login-container {*!*/
+/*!*    background-color: #ffffff;*!*/
+/*!*    width: 100%;*!*/
+/*!*    max-width: 400px;*!*/
+/*!*    padding: 30px;*!*/
+/*!*    border-radius: 8px;*!*/
+/*!*    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);*!*/
+/*!*}*!*/
+
+/*!*form {*!*/
+/*!*    display: flex;*!*/
+/*!*    flex-direction: column;*!*/
+/*!*}*!*/
+
+/*!*.form-group {*!*/
+/*!*    margin-bottom: 20px;*!*/
+/*!*}*!*/
+
+/*!*.form-group label {*!*/
+/*!*    font-size: 14px;*!*/
+/*!*    font-weight: 600;*!*/
+/*!*    color: #555;*!*/
+/*!*    margin-bottom: 8px;*!*/
+/*!*}*!*/
+
+/*!*.form-group input {*!*/
+/*!*    width: 100%;*!*/
+/*!*    padding: 12px;*!*/
+/*!*    font-size: 14px;*!*/
+/*!*    border: 1px solid #ccc;*!*/
+/*!*    border-radius: 4px;*!*/
+/*!*    background-color: #f9f9f9;*!*/
+/*!*    color: #333;*!*/
+/*!*    transition: border-color 0.3s ease;*!*/
+/*!*}*!*/
+
+/*!*.form-group input:focus {*!*/
+/*!*    border-color: #0066cc;*!*/
+/*!*    outline: none;*!*/
+/*!*}*!*/
+
+/*!*!* Button Group Styles *!*!*/
+/*!*.button-group {*!*/
+/*!*    display: flex;*!*/
+/*!*    justify-content: space-between;*!*/
+/*!*    margin-bottom: 20px;*!*/
+/*!*}*!*/
+
+/*!*button {*!*/
+/*!*    width: 48%;*!*/
+/*!*    padding: 12px;*!*/
+/*!*    font-size: 16px;*!*/
+/*!*    color: #fff;*!*/
+/*!*    border: none;*!*/
+/*!*    border-radius: 4px;*!*/
+/*!*    cursor: pointer;*!*/
+/*!*    transition: background-color 0.3s ease;*!*/
+/*!*}*!*/
+
+/*!*.login-btn {*!*/
+/*!*    background-color: #0066cc;*!*/
+/*!*}*!*/
+
+/*!*.login-btn:hover {*!*/
+/*!*    background-color: #005bb5;*!*/
+/*!*}*!*/
+
+/*!*.cancel-btn {*!*/
+/*!*    background-color: #f44336;*!*/
+/*!*}*!*/
+
+/*!*.cancel-btn:hover {*!*/
+/*!*    background-color: #e53935;*!*/
+/*!*}*!*/
+
+/*!*!* Link Styles *!*!*/
+/*!*.links {*!*/
+/*!*    text-align: center;*!*/
+/*!*}*!*/
+
+/*!*a {*!*/
+/*!*    color: #0066cc;*!*/
+/*!*    text-decoration: none;*!*/
+/*!*    font-weight: 600;*!*/
+/*!*}*!*/
+
+/*!*a:hover {*!*/
+/*!*    text-decoration: underline;*!*/
+/*!*}*!*/
+
+/*!*!* Forgot Password and Register Links *!*!*/
+/*!*.forgot-password {*!*/
+/*!*    font-size: 14px;*!*/
+/*!*}*!*/
+
+/*!*.register-link {*!*/
+/*!*    font-size: 14px;*!*/
+/*!*    display: block;*!*/
+/*!*    margin-top: 10px;*!*/
+/*!*}*!*/
+
+
+
+/*!* General styling *!*/
+/*body {*/
+/*    font-family: Arial, sans-serif;*/
+/*    background-color: #f4f7fa;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    height: 100vh;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*h2 {*/
+/*    text-align: center;*/
+/*    color: #333;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+/*!* Login Container *!*/
+/*.login-container {*/
+/*    background-color: #ffffff;*/
+/*    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);*/
+/*    padding: 40px;*/
+/*    border-radius: 8px;*/
+/*    width: 100%;*/
+/*    max-width: 400px;*/
+/*    margin: auto;*/
+/*}*/
+
+/*!* Flash messages *!*/
+/*.alert {*/
+/*    padding: 10px;*/
+/*    margin-bottom: 15px;*/
+/*    border-radius: 4px;*/
+/*    font-size: 14px;*/
+/*}*/
+
+/*.alert.success {*/
+/*    background-color: #d4edda;*/
+/*    color: #155724;*/
+/*    border: 1px solid #c3e6cb;*/
+/*}*/
+
+/*.alert.error {*/
+/*    background-color: #f8d7da;*/
+/*    color: #721c24;*/
+/*    border: 1px solid #f5c6cb;*/
+/*}*/
+
+/*!* Form Group *!*/
+/*.form-group {*/
+/*    margin-bottom: 15px;*/
+/*}*/
+
+/*label {*/
+/*    display: block;*/
+/*    color: #333;*/
+/*    font-weight: 600;*/
+/*    margin-bottom: 5px;*/
+/*}*/
+
+/*input[type="text"], input[type="password"] {*/
+/*    width: 100%;*/
+/*    padding: 10px;*/
+/*    font-size: 16px;*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 4px;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*input[type="text"]:focus, input[type="password"]:focus {*/
+/*    border-color: #4A90E2;*/
+/*    outline: none;*/
+/*}*/
+
+/*!* Button Group *!*/
+/*.button-group {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    margin-top: 20px;*/
+/*}*/
+
+/*.login-btn {*/
+/*    background-color: #4A90E2;*/
+/*    color: white;*/
+/*    border: none;*/
+/*    padding: 10px 20px;*/
+/*    font-size: 16px;*/
+/*    cursor: pointer;*/
+/*    border-radius: 4px;*/
+/*    width: 48%;*/
+/*}*/
+
+/*.login-btn:hover {*/
+/*    background-color: #357ABD;*/
+/*}*/
+
+/*.cancel-btn {*/
+/*    background-color: #f5f5f5;*/
+/*    color: #333;*/
+/*    border: 1px solid #ccc;*/
+/*    padding: 10px 20px;*/
+/*    font-size: 16px;*/
+/*    cursor: pointer;*/
+/*    border-radius: 4px;*/
+/*    width: 48%;*/
+/*}*/
+
+/*.cancel-btn:hover {*/
+/*    background-color: #e0e0e0;*/
+/*}*/
+
+/*!* Links *!*/
+/*.links {*/
+/*    text-align: center;*/
+/*    margin-top: 20px;*/
+/*}*/
+
+/*.links a {*/
+/*    color: #4A90E2;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.links a:hover {*/
+/*    text-decoration: underline;*/
+/*}*/
+
+/*.forgot-password {*/
+/*    font-size: 14px;*/
+/*}*/
+
+/*.forgot-password:hover {*/
+/*    text-decoration: underline;*/
+/*}*/
+
+
+
+
+
+/* Add some base styling for layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-weight: bold;
+    width: 30%;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.form-group input {
+    width: 65%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.login-btn, .cancel-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}
+
+.login-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.links {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.forgot-password {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+}
+
+.alert.success {
+    background-color: #4CAF50;
+}
+
+.alert.error {
+    background-color: #f44336;
+}
+/* Loading Spinner Styles */
+.loading-spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* semi-transparent overlay */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it sits above all other content */
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #4CAF50; /* Green color for the spinner */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 10s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
