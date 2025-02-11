@@ -1,0 +1,137 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Registered Students</title>-->
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h2>Registered Students</h2>-->
+<!--    <ul id="students-list">-->
+<!--        {% for student in students %}-->
+<!--            <li id="student-{{ student.id }}">-->
+<!--                {{ student.student_name }} ({{ student.roll_number }})-->
+<!--                <a href="{{ url_for('update_student', student_id=student.id) }}">Update</a>-->
+
+<!--                &lt;!&ndash; Delete Button &ndash;&gt;-->
+<!--                <button class="delete-btn" data-id="{{ student.id }}">Delete</button>-->
+
+<!--                &lt;!&ndash; Loading Spinner (Initially Hidden) &ndash;&gt;-->
+<!--                <span id="loading-{{ student.id }}" class="loading-spinner" style="display:none;">Loading...</span>-->
+<!--            </li>-->
+<!--        {% endfor %}-->
+<!--    </ul>-->
+
+<!--    &lt;!&ndash; Include jQuery library &ndash;&gt;-->
+<!--    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+
+<!--    <script>-->
+<!--        $(document).ready(function(){-->
+<!--            // Handle Delete button click-->
+<!--            $('.delete-btn').click(function(){-->
+<!--                var studentId = $(this).data('id');-->
+<!--                var deleteButton = $(this);-->
+<!--                var loadingSpinner = $('#loading-' + studentId);-->
+
+<!--                // Show the loading spinner-->
+<!--                loadingSpinner.show();-->
+
+<!--                // Hide the delete button-->
+<!--                deleteButton.hide();-->
+
+<!--                // Send AJAX request to delete the student-->
+<!--                $.ajax({-->
+<!--                    url: '/delete_student/' + studentId,  // URL to the Flask route-->
+<!--                    type: 'DELETE',  // HTTP DELETE method-->
+<!--                    success: function(response) {-->
+<!--                        // On success, remove the student from the list-->
+<!--                        $('#student-' + studentId).remove();-->
+<!--                    },-->
+<!--                    error: function(xhr, status, error) {-->
+<!--                        alert("Error deleting student: " + error);-->
+<!--                        loadingSpinner.hide();-->
+<!--                        deleteButton.show();  // Show the delete button again if there was an error-->
+<!--                    }-->
+<!--                });-->
+<!--            });-->
+<!--        });-->
+<!--    </script>-->
+
+
+
+<!--    <h1>Registered Students</h1>-->
+
+<!--    {% if error_message %}-->
+<!--        <p class="error">{{ error_message }}</p>-->
+<!--    {% endif %}-->
+
+<!--    <table>-->
+
+<!--        <tbody>-->
+<!--            {% for student in students %}-->
+<!--                <tr>-->
+
+<!--                    <td>-->
+<!--                        &lt;!&ndash; Update Button &ndash;&gt;-->
+<!--                        <a href="{{ url_for('update_student', student_id=student.id) }}" class="btn update-btn">Update</a>-->
+
+<!--                        &lt;!&ndash; Delete Button inside a form &ndash;&gt;-->
+<!--                        <form action="{{ url_for('delete_student', student_id=student.id) }}" method="POST" style="display:inline-block;" onsubmit="return confirm('Are you sure you want to delete this student?');">-->
+<!--                            <button type="submit" class="delete-btn">Delete</button>-->
+<!--                        </form>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--            {% endfor %}-->
+<!--        </tbody>-->
+<!--    </table>-->
+
+<!--&lt;!&ndash;<form method="POST" action="{{ url_for('delete_student', student_id=student.id) }}">&ndash;&gt;-->
+<!--&lt;!&ndash;    <button type="submit" class="btn delete-btn">Delete Student</button>&ndash;&gt;-->
+<!--&lt;!&ndash;</form>&ndash;&gt;-->
+
+
+<!--</body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Update_Student.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Student List</h1>
+
+        <!-- Display success message -->
+        {% if success_message %}
+            <div class="message success">
+                {{ success_message }}
+            </div>
+        {% endif %}
+
+        <!-- Display error message -->
+        {% if error_message %}
+            <div class="message error">
+                {{ error_message }}
+            </div>
+        {% endif %}
+
+        <!-- List of students (you can loop through the student records here) -->
+        <ul>
+            {% for student in students %}
+                <li>{{ student.student_name }}
+                    <form method="POST" action="/student_details/{{ student.id }}" style="display:inline;">
+                        <button type="submit" class="btn delete-btn">Delete</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+

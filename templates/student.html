@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Student.css') }}">
+</head>
+<body>
+
+<div class="login-container">
+    <!-- Display flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div id="flash-message" class="alert {{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST" action="/student">
+        <h2>Student Login</h2>
+
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <div class="button-group">
+            <button type="submit" class="login-btn">Login</button>
+            <button type="button" class="cancel-btn" onclick="window.location.href='/index'">Cancel</button>
+        </div>
+
+        <div class="links">
+            <p><a href="Forgot_Password" class="forgot-password">Forgot Password?</a></p>
+            <p>Don't have an account? <a href="/Register">Register</a></p>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" class="loading-spinner">
+            <div class="spinner"></div>
+        </div>
+
+    </form>
+</div>
+
+<script>
+    // Check if the flash message is shown and has the 'success' category
+    const flashMessage = document.getElementById('flash-message');
+
+    if (flashMessage && flashMessage.classList.contains('success')) {
+        // Display the flash message for 4 seconds
+        setTimeout(function() {
+            // After 4 seconds, redirect to the update details page
+            window.location.href = '{{ url_for("update_details") }}';
+        }, 4000);  // 4000 ms = 4 seconds
+    }
+
+    // Function to show the spinner and delay the page load for 5 seconds (if needed)
+    function showLoading() {
+        document.getElementById('loading-spinner').style.display = 'flex'; // Show the spinner
+
+        // Simulate a 5-second delay before allowing the form submission
+        setTimeout(function() {
+            document.querySelector('form').submit(); // Submit the form after 5 seconds
+        }, 2000);
+    }
+
+    // Add event listener to form submission
+    document.querySelector('form').addEventListener('submit', function(event) {
+        // Prevent the default form submission to allow for loading spinner
+        event.preventDefault();
+        showLoading();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Register.css') }}">
+</head>
+<body>
+
+    <div class="form-container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul>
+        {% for category, message in messages %}
+            <li class="alert alert-{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('register') }}" method="POST">
+        <h2 class="form-header">Student Registration Details</h2>
+
+        <div class="form-group">
+            <label for="student_name">Student Name</label>
+            <input type="text" id="student_name" name="student_name" placeholder="Enter Your Name" required><br>
+        </div>
+
+        <div class="form-group">
+            <label for="id">Student Id</label>
+            <input type="text" id="id" name="id" placeholder="Enter Your Id" required>
+        </div>
+
+        <div class="form-group">
+            <label for="username">User Name</label>
+            <input type="text" id="username" name="username" placeholder="Enter Your Username" required><br>
+        </div>
+
+        <div class="form-group">
+            <label for="roll_number">Roll No</label>
+            <input type="text" id="roll_number" name="roll_number" placeholder="roll_number" required>
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="gender-options">
+                <label><input type="radio" name="gender" id="gender" value="Male"> Male</label>
+                <label><input type="radio" name="gender" id="gender" value="Female"> Female</label>
+                <label><input type="radio" name="gender" id="gender" value="Others"> Others</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="fathername">Father's Name</label>
+            <input type="text" id="fathername" name="fathername" placeholder="Enter Your Father's Name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mothername">Mother's Name</label>
+            <input type="text" id="mothername" name="mothername" placeholder="Enter Your Mother's Name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone_number">Phone Number</label>
+            <input type="number" id="phone_number" name="phone_number" placeholder="Enter Your Mobile Number" required>
+        </div>
+
+        <div class="form-group">
+            <label for="state">State</label>
+            <select id="state" name="state">
+                <option value="">Select State</option>
+                <!-- Add options here -->
+                <option>Andhra Pradesh</option>
+                <option>Kerala</option>
+                <!-- Add more states -->
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="district">District</label>
+            <input type="text" id="district" name="district" placeholder="Enter Your District" required>
+        </div>
+
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="Enter Your City" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" placeholder="Enter Your Address" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter Your Password" required><br><br>
+        </div>
+
+        <div class="button-group">
+            <button type="submit" class="btn submit-btn">Submit</button>
+            <button type="reset" class="btn reset-btn">Reset</button>
+            <button type="button" class="btn cancel-btn" onclick="window.location.href='/student'">Cancel</button>
+        </div>
+
+        <p><a href="student" class="student">Student Login Page</a></p>
+    </form>
+</div>
+</body>
+</html>
